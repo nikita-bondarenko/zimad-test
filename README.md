@@ -16,3 +16,4 @@ yarn install
 yarn start
 ```
 The application will be launched by [Nodemon](https://nodemon.com) so it's will restart automatically on file change
+# zimad-test
