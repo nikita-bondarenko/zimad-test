@@ -1,6 +1,6 @@
-# Node Typescript Starter
+# zimad-test
 
-This project contains a minimal starter for Node.js project with Typescript, ESLint and Prettier already configured
+### ! Before start connect this app to Docker (MySQL) and initialize prisma-client. If you don't now how to do this, read [hear](https://blog.tericcabrel.com/using-prisma-orm-to-build-a-nodejs-application-with-mysql/).
 
 ## Prerequisites
 - Node.js 10+
@@ -9,11 +9,13 @@ This project contains a minimal starter for Node.js project with Typescript, ESL
 ## Installation
 - Install dependencies
 ```bash
-yarn install
+npm install
 ```
 - Start Application
 ```bash
-yarn start
+npm start
 ```
-The application will be launched by [Nodemon](https://nodemon.com) so it's will restart automatically on file change
-# zimad-test
+- Start e2e testing
+```bash
+npm run test
+```
