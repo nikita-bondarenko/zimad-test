@@ -10,12 +10,15 @@ import signup from './routes/signup'
 import signin from './routes/signin'
 import user from './routes/user'
 import file from './routes/file'
+import fs from 'fs'
 
 
 const port = process.env.PORT;
 const staticDir = path.join(__dirname, '..', 'client');
 export const storeDir = path.join(__dirname, 'store');
-
+if (!fs.existsSync(storeDir)) {
+  fs.mkdirSync(storeDir, { recursive: true });
+}
 export const app = express();
 export const prisma = new PrismaClient();
 export const hash = (p) => crypto.createHash('sha512').update(p).digest('hex');
