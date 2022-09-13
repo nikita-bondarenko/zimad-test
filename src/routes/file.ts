@@ -31,12 +31,14 @@ router.post('/upload', upload.single('fileData'), async (req, res) => {
 
     try {
         const isAuthorized = await checkAuthorized(req, res)
+        console.log('isAuthorized', isAuthorized)
         if (!isAuthorized) {
             req.file ? fs.unlink(path.join(storeDir, req.file.filename)) : 1
             res.sendStatus(401)
             return
         }
         const { file } = req
+        console.log('file', file)
         if (file) {
             const userId = await getUserIdByBearerToken(req, res)
 
